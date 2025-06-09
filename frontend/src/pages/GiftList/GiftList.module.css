@@ -1,0 +1,52 @@
+.giftListContainer {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.giftListContainer h2 {
+    font-size: 2.2em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.giftListContainer p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.categoryFilter {
+    margin-bottom: 30px;
+}
+
+.categoryFilter label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #555;
+}
+
+.categoryFilter select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.giftsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #888;
+}
+
+.error {
+    color: #dc3545;
+}

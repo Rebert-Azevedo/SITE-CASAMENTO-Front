@@ -1,0 +1,15 @@
+.guestManagementContainer {
+    padding: 20px;
+    text-align: center;
+}
+
+.guestManagementContainer h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.guestManagementContainer p {
+    color: #666;
+    font-size: 1.1em;
+}

@@ -1,0 +1,78 @@
+.giftCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+}
+
+.giftCard:hover {
+    transform: translateY(-5px);
+}
+
+.giftImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.giftName {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.giftDescription {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.giftValue {
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.buyLink {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.buyLink:hover {
+    background-color: #0056b3;
+}
+
+.reserveButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.reserveButton:hover {
+    background-color: #218838;
+}
+
+.reservedStatus {
+    color: #6c757d;
+    font-style: italic;
+    padding: 10px 0;
+}
