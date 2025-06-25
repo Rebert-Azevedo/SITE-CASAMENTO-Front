@@ -38,7 +38,8 @@ function GiftListItem({ gift, onReserve }) {
 
     setFormLoading(true);
     try {
-      const response = await api.post(`/gifts/${gift.id}/reserve`, {
+      // CORRIGIDO: Removida a declaração 'const response = '
+      await api.post(`/gifts/${gift.id}/reserve`, {
         nome_reservou: formNome,
         telefone: formTelefone,
         mensagem: formMensagem,
