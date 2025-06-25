@@ -7,13 +7,13 @@ function GiftListItem({ gift, onReserve }) {
   const [formNome, setFormNome] = useState('');
   const [formTelefone, setFormTelefone] = useState('');
   const [formMensagem, setFormMensagem] = useState('');
-  const [formLoading, setFormLoading] = useState(false); 
-  const [formError, setFormError] = useState(null); 
+  const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState(null);
   const [formSuccess, setFormSuccess] = useState(false);
 
   const handleOpenForm = () => {
     setShowReservationForm(true);
-    setFormNome(''); 
+    setFormNome('');
     setFormTelefone('');
     setFormMensagem('');
     setFormError(null);
@@ -26,7 +26,7 @@ function GiftListItem({ gift, onReserve }) {
     setFormSuccess(false);
   };
 
-  const handleSubmitReservation = async (e) => { 
+  const handleSubmitReservation = async (e) => {
     e.preventDefault();
     setFormError(null);
     setFormSuccess(false);
@@ -42,12 +42,12 @@ function GiftListItem({ gift, onReserve }) {
         nome_reservou: formNome,
         telefone: formTelefone,
         mensagem: formMensagem,
-        email_reservou: 'nao_usado@exemplo.com' 
+        email_reservou: 'nao_usado@exemplo.com'
       });
 
       setFormSuccess(true);
-      setFormError(null); 
-      onReserve(gift.id); 
+      setFormError(null);
+      onReserve(gift.id);
 
       setTimeout(() => {
         setShowReservationForm(false);
@@ -90,7 +90,7 @@ function GiftListItem({ gift, onReserve }) {
           {!formLoading && !formSuccess && (
             <form onSubmit={handleSubmitReservation} className={styles.reservationForm}>
               <div className={styles.formGroupInline}>
-                <label htmlFor={`nome-${gift.id}`}>Seu nome:</label>
+                <label htmlFor={`nome-${gift.id}`}>Seu Nome:</label>
                 <input
                   type="text"
                   id={`nome-${gift.id}`}
@@ -101,7 +101,7 @@ function GiftListItem({ gift, onReserve }) {
                 />
               </div>
               <div className={styles.formGroupInline}>
-                <label htmlFor={`telefone-${gift.id}`}>Seu telefone:</label>
+                <label htmlFor={`telefone-${gift.id}`}>Seu Telefone:</label>
                 <input
                   type="tel"
                   id={`telefone-${gift.id}`}
