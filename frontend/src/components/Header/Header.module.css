@@ -1,8 +1,9 @@
 .header {
-    background-color: #f8f8f8;
-    padding: 15px 30px;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: var(--color-white);
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
 .nav {
@@ -16,34 +17,96 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 25px;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navLink {
     text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--color-text-medium);
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
 }
 
 .navLink:hover {
-    background-color: #e0e0e0;
-    color: #333;
+    background-color: var(--color-secondary-green);
+    color: var(--color-white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .logoutButton {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    background-color: var(--color-primary-gold);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
 }
 
 .logoutButton:hover {
-    background-color: #c82333;
+    background-color: var(--color-primary-gold);
+    filter: brightness(0.9);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .navList {
+        gap: 25px;
+    }
+    .navLink, .logoutButton {
+        font-size: 0.95em;
+        padding: 10px 15px;
+        letter-spacing: 0.05em;
+    }
+
+    body.is-admin-page .navList {
+        display: none !important; 
+    }
+    body.is-admin-page .header {
+        padding: 10px 20px;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 10px 15px;
+    }
+    .navList {
+        gap: 10px;
+    }
+    .navLink, .logoutButton {
+        font-size: 0.8em;
+        padding: 6px 10px;
+        letter-spacing: 0.03em;
+    }
+}
+
+@media (max-width: 380px) {
+    .header {
+        padding: 8px 10px;
+    }
+    .navList {
+        gap: 5px;
+    }
+    .navLink, .logoutButton {
+        font-size: 0.75em;
+        padding: 5px 8px;
+    }
 }

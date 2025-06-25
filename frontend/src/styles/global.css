@@ -1,27 +1,205 @@
-/* Seu CSS global aqui */
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --color-primary-green: #8B9B75;
+    --color-secondary-green: #A3B590;
+    --color-primary-gold: #B8A16C;
+    --color-secondary-gold: #D2C49A;
+    --color-background-light: #FBFBF6;
+    --color-white: #FFFFFF;
+    --color-text-dark: #4A4A4A;
+    --color-text-medium: #757575;
+    --color-border-subtle: #E0E0DB;
+    --color-accent-dark: #6D7B5C;
+
+    --color-error: #CC6666;
+    --color-success: #66CC99;
+
+    --color-primary-gold-rgb: 184, 161, 108;
+    --color-primary-green-rgb: 139, 155, 117;
+    --color-error-rgb: 204, 102, 102;
+    --color-success-rgb: 102, 204, 153; 
+    --color-background-light-rgb: 251, 251, 246;
+    --color-white-rgb: 255, 255, 255;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    background: linear-gradient(to bottom right, var(--color-background-light), var(--color-secondary-gold), var(--color-primary-gold));
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--color-text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 16px; 
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #555;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-text-dark);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.2em; }
+h2 { font-size: 2.6em; }
+h3 { font-size: 2.0em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.3em; }
+
+p {
+    margin-bottom: 1.2em;
+    color: var(--color-text-medium);
 }
 
 a {
-    color: #007bff;
+    color: var(--color-primary-gold);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: var(--color-accent-dark);
     text-decoration: underline;
 }
 
 main {
-    padding: 20px;
-    min-height: calc(100vh - 120px); /* Ajuste com base na altura do seu header/footer */
+    padding: 0;
+    min-height: calc(100vh - 200px);
+    max-width: 100%;
+    margin: 0;
+}
+
+button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05em;
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+button:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+    margin-bottom: 25px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-text-dark);
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="password"],
+.formGroup input[type="number"],
+.formGroup input[type="url"],
+.formGroup input[type="tel"], 
+.formGroup textarea,
+.formGroup select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+    border-color: var(--color-primary-green);
+    box-shadow: 0 0 0 4px rgba(var(--color-primary-green-rgb), 0.15);
+    outline: none;
+}
+
+.errorMessage {
+    color: var(--color-error);
+    background-color: rgba(var(--color-error-rgb), 0.1); 
+    border: 1px solid rgba(var(--color-error-rgb), 0.2); 
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.successMessage {
+    color: var(--color-success);
+    background-color: rgba(var(--color-success-rgb), 0.1); 
+    border: 1px solid rgba(var(--color-success-rgb), 0.2); 
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; 
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px; 
+    }
+}
+
+body.modal-open, html.modal-open {
+    overflow: hidden !important;
+    height: 100% !important;
+    position: fixed !important;
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.modalOverlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 99999 !important;
+}
+
+.modalContent {
+    z-index: 100000 !important;
+}
+
+body.modal-open > *:not(.modalOverlay),
+html.modal-open > body > *:not(.modalOverlay) {
+    pointer-events: none !important;
+}
+
+.modalOverlay {
+    pointer-events: auto !important;
+}
+
+.modalOverlay * { 
+    pointer-events: auto !important;
 }

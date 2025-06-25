@@ -1,0 +1,133 @@
+.giftAdminCard {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid var(--color-border-subtle);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.giftAdminCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.cardHeader {
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--color-border-subtle);
+    text-align: left;
+}
+
+.cardId {
+    font-size: 0.9em;
+    color: var(--color-text-medium);
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.cardName {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: var(--color-primary-green);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.cardBody {
+    flex-grow: 1;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.cardDescription {
+    font-size: 0.95em;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.cardCategory,
+.cardStatus,
+.cardReservedBy,
+.cardReservationDate,
+.cardReservationMessage {
+    font-size: 0.9em;
+    color: var(--color-text-medium);
+    margin-bottom: 5px;
+}
+
+.cardStatus span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.status_disponível { color: var(--color-success); }
+.status_reservado { color: var(--color-primary-gold); }
+.status_comprado { color: var(--color-text-dark); }
+
+.cardActions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-border-subtle); 
+}
+
+.actionButtonEdit,
+.actionButtonDelete {
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.actionButtonEdit {
+    background-color: var(--color-secondary-gold);
+    color: var(--color-text-dark);
+}
+.actionButtonEdit:hover {
+    background-color: darken(var(--color-secondary-gold), 10%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.actionButtonDelete {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+.actionButtonDelete:hover {
+    background-color: darken(var(--color-error), 10%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 576px) {
+    .giftAdminCard {
+        padding: 20px;
+    }
+    .cardName {
+        font-size: 1.6em;
+    }
+    .cardDescription {
+        font-size: 0.9em;
+    }
+    .cardActions {
+        flex-direction: column; 
+        gap: 8px;
+    }
+    .actionButtonEdit, .actionButtonDelete {
+        width: 100%; 
+        margin-right: 0;
+    }
+}

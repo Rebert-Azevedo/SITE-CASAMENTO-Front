@@ -1,15 +1,273 @@
 .guestManagementContainer {
     padding: 20px;
-    text-align: center;
 }
 
 .guestManagementContainer h2 {
-    font-size: 2em;
-    color: #333;
+    font-size: 2.5em;
+    color: var(--color-primary-green);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.guestManagementContainer h3 {
+    font-size: 1.8em;
+    color: var(--color-primary-green);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: 10px;
+}
+
+.guestForm {
+    background-color: var(--color-white);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 50px;
+    border-top: 5px solid var(--color-primary-gold);
+}
+
+.formGroup {
     margin-bottom: 20px;
 }
 
-.guestManagementContainer p {
-    color: #666;
+.formGroup label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-text-dark);
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="tel"],
+.formGroup input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.submitButton {
+    background-color: var(--color-primary-gold); 
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 20px;
+}
+.submitButton:hover {
+    background-color: var(--color-primary-gold); 
+    filter: brightness(0.9); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: var(--color-white); 
+}
+
+.cancelButton {
+    background-color: var(--color-text-medium); 
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.cancelButton:hover {
+    background-color: var(--color-text-medium); 
+    filter: brightness(0.9); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: var(--color-white);
+}
+
+.errorMessage {
+    color: var(--color-error);
+    background-color: rgba(var(--color-error-rgb), 0.1);
+    border: 1px solid rgba(var(--color-error-rgb), 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--color-border-subtle);
+    margin: 50px 0;
+}
+
+.guestsTable {
+    width: 100%;
+    min-width: 700px; 
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.guestsTable th,
+.guestsTable td {
+    border: 1px solid var(--color-border-subtle);
+    padding: 14px 18px;
+    text-align: left;
+    white-space: nowrap; 
+}
+
+.guestsTable th {
+    background-color: var(--color-secondary-green);
+    font-weight: bold;
+    color: var(--color-white);
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.guestsTable tbody tr:nth-child(even) {
+    background-color: var(--color-background-light);
+}
+
+.guestsTable tbody tr:hover {
+    background-color: lighten(var(--color-secondary-green), 20%);
+}
+
+.actionButtonEdit,
+.actionButtonDelete {
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.actionButtonEdit {
+    background-color: var(--color-secondary-gold);
+    color: var(--color-text-dark);
+}
+.actionButtonEdit:hover {
+    background-color: darken(var(--color-secondary-gold), 10%);
+}
+
+.actionButtonDelete {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+.actionButtonDelete:hover {
+    background-color: darken(var(--color-error), 10%);
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: var(--color-text-medium);
+}
+.error {
+    color: var(--color-error);
+}
+
+@media (max-width: 992px) {
+    .guestManagementContainer {
+        padding: 15px;
+    }
+    .guestManagementContainer h2 {
+        font-size: 2.2em;
+    }
+    .guestManagementContainer h3 {
+        font-size: 1.6em;
+    }
+    .guestForm {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+    .formGroup input[type="text"],
+    .formGroup input[type="tel"],
+    .formGroup input[type="number"] {
+        padding: 10px;
+    }
+    .submitButton, .cancelButton {
+        padding: 12px 20px;
+        font-size: 1em;
+        margin-right: 15px;
+    }
+    .guestsTable {
+        border-radius: 8px;
+        font-size: 0.95em;
+    }
+    .guestsTable th, .guestsTable td {
+        padding: 10px 12px;
+    }
+    .actionButtonEdit, .actionButtonDelete {
+        padding: 8px 12px;
+        font-size: 0.9em;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .guestManagementContainer {
+        padding: 10px;
+    }
+    .guestManagementContainer h2 {
+        font-size: 2em;
+    }
+    .guestManagementContainer h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    .guestForm {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .formGroup {
+        margin-bottom: 15px;
+    }
+    .formGroup label {
+        font-size: 0.9em;
+        margin-bottom: 5px;
+    }
+    .formGroup input,
+    .formGroup textarea,
+    .formGroup select {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    .submitButton, .cancelButton {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .actionButtonEdit, .actionButtonDelete {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .guestManagementContainer h2 {
+        font-size: 1.8em;
+    }
+    .guestManagementContainer h3 {
+        font-size: 1.2em;
+    }
+    .guestForm {
+        padding: 15px;
+    }
+    .guestsTable th, .guestsTable td {
+        padding: 8px 10px;
+        font-size: 0.8em;
+    }
+    .actionButtonEdit, .actionButtonDelete {
+        font-size: 0.75em;
+        padding: 5px 8px;
+    }
 }

@@ -1,53 +1,67 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import styles from './AdminLogin.module.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import styles from "./AdminLogin.module.css";
 
 function AdminLoginPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const { login } = useAuth();
+  const [secretKey, setSecretKey] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+  const { loginWithSecretKey } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    try {
-      await login(username, password);
-      navigate('/admin/presentes');
-    } catch (err) {
-      setError('Credenciais inválidas. Verifique usuário e senha.');
-      console.error('Login failed:', err);
+    setError("");
+    setMessage("");
+    if (!secretKey) {
+      setError("A chave secreta é obrigatória.");
+      return;
     }
+
+    try {
+      const result = await loginWithSecretKey(secretKey);
+      setMessage(result.message || "Acesso concedido com sucesso!");
+      navigate("/admin/presentes");
+    } catch (err) {
+      setError(err.message || "Chave secreta inválida. Tente novamente.");
+    }
+  };
+
+  const handleGoBack = () => {
+    navigate("/");
   };
 
   return (
     <div className={styles.loginContainer}>
-      <h2>Login do Administrador</h2>
+      <h2>Acesso de administrador</h2>
+      {message && <p className={styles.successMessage}>{message}</p>}
+      {error && <p className={styles.errorMessage}>{error}</p>}
+
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label htmlFor="username">Usuário:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label htmlFor="password">Senha:</label>
+          <label htmlFor="secretKey">Chave secreta:</label>
           <input
             type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            id="secretKey"
+            value={secretKey}
+            onChange={(e) => setSecretKey(e.target.value)}
             required
           />
         </div>
-        {error && <p className={styles.errorMessage}>{error}</p>}
-        <button type="submit" className={styles.loginButton}>Entrar</button>
+        <button
+          type="submit"
+          className={`${styles.submitButton} darken-primary-green`}
+        >
+          Acessar Painel
+        </button>
+        <button
+          type="button"
+          onClick={handleGoBack}
+          className={`${styles.backButton} darken-text-medium`}
+        >
+          Voltar
+        </button>
       </form>
     </div>
   );

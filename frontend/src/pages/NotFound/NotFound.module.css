@@ -5,32 +5,88 @@
     justify-content: center;
     min-height: calc(100vh - 80px);
     text-align: center;
-    background-color: #f0f2f5;
+    background-color: var(--color-background-light);
+    padding: 20px;
 }
 
 .notFoundContainer h1 {
-    font-size: 6em;
-    color: #dc3545;
+    font-size: 10em;
+    color: var(--color-primary-gold); 
     margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.05em;
 }
 
 .notFoundContainer p {
-    font-size: 1.5em;
-    color: #666;
-    margin-bottom: 30px;
+    font-size: 2em;
+    color: var(--color-text-dark);
+    margin-bottom: 40px;
+    font-family: 'Lora', serif;
 }
 
 .homeLink {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    padding: 18px 35px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.homeLink:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.homeLink:hover {
-    background-color: #0056b3;
+@media (max-width: 768px) {
+    .notFoundContainer {
+        min-height: calc(100vh - 60px); 
+        padding: 15px; 
+    }
+    .notFoundContainer h1 {
+        font-size: 8em; 
+        margin-bottom: 15px;
+    }
+    .notFoundContainer p {
+        font-size: 1.6em; 
+        margin-bottom: 30px;
+    }
+    .homeLink {
+        padding: 15px 30px; 
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .notFoundContainer {
+        padding: 10px;
+    }
+    .notFoundContainer h1 {
+        font-size: 6em;
+        margin-bottom: 10px;
+    }
+    .notFoundContainer p {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+    }
+    .homeLink {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 320px) {
+    .notFoundContainer h1 {
+        font-size: 5em;
+    }
+    .notFoundContainer p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+    .homeLink {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
 }

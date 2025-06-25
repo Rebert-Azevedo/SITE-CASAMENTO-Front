@@ -1,22 +1,33 @@
 .dashboardContainer {
     display: flex;
     min-height: calc(100vh - 80px);
-    background-color: #f8f8f8;
+    background-color: var(--color-background-light);
+    margin-top: 0;
+    width: 100%;
 }
 
 .sidebar {
-    width: 250px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    width: 280px;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    padding: 30px 20px;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100vh; 
+    overflow-y: auto;
+    padding-top: calc(80px + 30px); 
+    box-sizing: border-box; 
+    z-index: 10; 
 }
 
 .sidebar h3 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #eee;
-    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: var(--color-white);
+    font-size: 1.8em;
+    font-family: 'Playfair Display', serif;
 }
 
 .sidebar ul {
@@ -25,40 +36,144 @@
 }
 
 .sidebar li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .sidebarLink {
     display: block;
-    padding: 10px 15px;
-    color: white;
+    padding: 12px 18px;
+    color: var(--color-white);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.05em;
 }
 
 .sidebarLink:hover {
-    background-color: #555;
+    background-color: var(--color-secondary-green);
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
 }
 
 .logoutButton {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background-color: var(--color-primary-gold);
+    color: var(--color-white);
+    padding: 14px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
     width: 100%;
-    margin-top: 30px;
-    transition: background-color 0.3s ease;
+    margin-top: 40px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
 }
-
 .logoutButton:hover {
-    background-color: #c82333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .content {
     flex-grow: 1;
-    padding: 30px;
+    padding: 30px 40px;
+    padding-top: 30px;
+    background-color: var(--color-white);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+    margin-left: 280px; 
+    position: relative;
+    min-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 220px; 
+        padding-top: calc(80px + 20px); 
+    }
+    .sidebar h3 {
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+    .sidebarLink {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    .logoutButton {
+        padding: 12px 18px;
+        font-size: 1em;
+        margin-top: 30px;
+    }
+    .content {
+        margin-left: 220px; 
+        padding: 25px 30px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardContainer {
+        flex-direction: column; 
+        min-height: calc(100vh - 60px);
+    }
+    .sidebar {
+        position: relative; 
+        width: 100%; 
+        height: auto; 
+        padding: 15px 10px; 
+        padding-top: 15px; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+        display: flex; 
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .sidebar h3 {
+        display: none;
+    }
+    .sidebar nav {
+        width: 100%; 
+    }
+    .sidebar ul {
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; 
+    }
+    .sidebar li {
+        margin-bottom: 0;
+        flex-grow: 1;
+        max-width: 180px;
+    }
+    .sidebarLink, .logoutButton {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        width: 100%; 
+        text-align: center;
+    }
+    .logoutButton {
+        margin-top: 10px;
+        flex-grow: 1;
+    }
+    .content {
+        margin-left: 0; 
+        padding: 20px 15px; 
+        min-height: calc(100vh - 120px); 
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+    .sidebar ul {
+        gap: 10px;
+    }
+    .sidebarLink, .logoutButton {
+        font-size: 0.85em;
+        padding: 8px 12px;
+    }
+    .content {
+        padding: 15px 10px;
+    }
 }

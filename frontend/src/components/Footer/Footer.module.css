@@ -1,13 +1,39 @@
 .footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05); 
 }
 
 .footer p {
     margin: 5px 0;
-    font-size: 0.9em;
+    color: var(--color-white);
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px; 
+        font-size: 0.9em; 
+        margin-top: 40px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px; 
+        font-size: 0.8em; 
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer {
+        padding: 10px;
+        font-size: 0.75em;
+    }
 }
