@@ -1,292 +1,408 @@
 .homeContainer {
-    text-align: center;
-    padding: 0;
-    max-width: none;
+  text-align: center;
+  padding: 0;
+  max-width: none;
 }
 
 .heroSection {
-    position: relative;
-    width: 100%;
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding-top: 60px;
-    box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 60px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .overlayText {
-    position: relative;
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 50px 60px;
-    border-radius: 15px;
-    max-width: 800px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    text-shadow: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--color-border-subtle);
+  position: relative;
+  z-index: 10;
+  background-color: var(--color-white);
+  padding: 50px 60px;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-border-subtle);
 }
 
 .heroTitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.8em;
-    color: var(--color-text-dark);
-    margin-bottom: 20px;
-    letter-spacing: 0.05em;
-    line-height: 1.1;
+  font-family: "Playfair Display", serif;
+  font-size: 3.8em;
+  color: var(--color-primary-green);
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
 }
 
 .names {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.0em;
-    font-weight: 700;
-    color: var(--color-primary-green);
-    margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  margin-bottom: 25px;
 }
 
 .names span {
-    color: var(--color-primary-gold);
-    padding: 0 10px;
+  color: var(--color-primary-gold);
+  padding: 0 10px;
+}
+
+.descriptionSection {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: "Lora", serif;
+  font-size: 1.05em;
+  color: var(--color-text-dark);
+  line-height: 1.7;
+  max-width: 650px;
+  text-align: justify;
+  text-align: center;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 25px;
+  background-color: transparent;
+}
+
+.descriptionSection p {
+  margin-bottom: 1em;
+  color: var(--color-text-dark);
+}
+
+.bibleVerseUnified {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--color-primary-green);
+  margin-top: 1em;
+  margin-bottom: 0.1em;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.verseReferenceBold {
+  font-size: 0.9em;
+  color: var(--color-text-medium);
+  text-align: center;
+  margin-top: 0.2em;
+  margin-bottom: 1.5em;
 }
 
 .date {
-    font-family: 'Lora', serif;
-    font-size: 1.8em;
-    color: var(--color-text-medium);
-    margin-bottom: 25px;
-    letter-spacing: 0.03em;
+  font-family: "Lora", serif;
+  font-size: 1.8em;
+  color: var(--color-text-medium);
+  margin-bottom: 25px;
+  letter-spacing: 0.03em;
 }
 
 .countdown {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2.2em;
-    color: var(--color-primary-gold);
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    background-color: rgba(var(--color-primary-gold-rgb), 0.1);
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 8px;
-    margin-top: 15px;
-    border: 1px solid rgba(var(--color-primary-gold-rgb), 0.2);
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.2em;
+  color: var(--color-primary-gold);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  background-color: rgba(var(--color-primary-gold-rgb), 0.2);
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border: 1px solid rgba(var(--color-primary-gold-rgb), 0.2);
 }
 
 .countdownNumber {
-    font-size: 1.3em;
-    color: var(--color-primary-green);
+  font-size: 1.3em;
+  color: var(--color-primary-green);
 }
 
 .verse {
-    margin-top: 40px;
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 1.1em;
-    color: var(--color-text-medium);
-    line-height: 1.6;
-    max-width: 600px;
-    border-top: 1px solid var(--color-border-subtle);
-    padding-top: 30px;
+  margin-top: 40px;
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  max-width: 600px;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 30px;
 }
 
 .verse p {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .eventInfoSection {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 80px 20px;
-    max-width: 1280px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  background-color: transparent;
 }
 
 .eventInfoCard {
-    background-color: rgba(255, 255, 255, 0.85); 
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    text-align: left;
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    border-top: 5px solid var(--color-primary-gold);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  border-top: 5px solid var(--color-primary-gold);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .eventInfoCard:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
 }
 
-.eventInfoCard h3 {
-    font-size: 2em;
-    color: var(--color-primary-green);
-    margin-top: 0;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--color-border-subtle);
-}
-
-.eventInfoCard p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-    color: var(--color-text-dark);
-}
-
-.loading, .error {
-    text-align: center;
-    padding: 50px;
-    font-size: 1.2em;
-    color: var(--color-text-medium);
+.loading,
+.error {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2em;
+  color: var(--color-text-medium);
 }
 
 .error {
-    color: var(--color-error);
+  color: var(--color-error);
 }
 
 @media (max-width: 768px) {
-    .heroSection {
-        height: 70vh;
-        padding-top: 40px; 
-        padding-left: 15px; 
-        padding-right: 15px;
-    }
-    .overlayText {
-        padding: 30px; 
-        max-width: 95%; 
-    }
-    .heroTitle {
-        font-size: 2.8em; 
-        letter-spacing: 0.03em; 
-        margin-bottom: 15px;
-    }
-    .names {
-        font-size: 2.2em; 
-        margin-bottom: 20px;
-    }
-    .names span {
-        padding: 0 8px; 
-    }
-    .date {
-        font-size: 1.5em; 
-        margin-bottom: 20px;
-    }
-    .countdown {
-        font-size: 1.8em;
-        padding: 10px 20px;
-        letter-spacing: 0.08em;
-    }
-    .countdownNumber {
-        font-size: 1.2em;
-    }
-    .verse {
-        margin-top: 30px;
-        padding-top: 20px;
-        font-size: 1em;
-        max-width: 90%;
-    }
-    .eventInfoSection {
-        padding: 40px 15px; 
-        gap: 20px;
-    }
-    .eventInfoCard {
-        padding: 25px;
-        min-width: 100%;
-        max-width: 100%;
-        margin-bottom: 15px; 
-    }
-    .eventInfoCard h3 {
-        font-size: 1.4em;
-    }
-    .eventInfoCard p {
-        font-size: 0.95em;
-    }
+  .heroSection {
+    height: auto;
+    min-height: 70vh;
+    padding-top: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .overlayText {
+    padding: 30px;
+    max-width: 95%;
+  }
+  .heroTitle {
+    font-size: 2.6em;
+    letter-spacing: 0.03em;
+    margin-bottom: 15px;
+  }
+  .names {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+  .names span {
+    padding: 0 8px;
+  }
+  .date {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  .countdown {
+    font-size: 1.8em;
+    padding: 10px 20px;
+    letter-spacing: 0.08em;
+  }
+  .countdownNumber {
+    font-size: 1.2em;
+  }
+  .verse {
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 1em;
+    max-width: 90%;
+  }
+  .descriptionSection {
+    font-size: 0.95em;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  .bibleVerseUnified {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  .verseReferenceBold {
+    font-size: 0.85em;
+  }
+  .eventInfoSection {
+    padding: 50px 15px;
+    gap: 25px;
+  }
+  .infoCard {
+    padding: 30px;
+    min-width: 90%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  .infoCard h3 {
+    font-size: 1.6em;
+  }
+  .infoCard p {
+    font-size: 0.95em;
+  }
 }
 
 @media (max-width: 480px) {
-    .heroSection {
-        height: 60vh;
-        padding-top: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .overlayText {
-        padding: 20px; 
-        max-width: 98%;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-    .heroTitle {
-        font-size: 1.8em; 
-        letter-spacing: 0.02em;
-        margin-bottom: 10px;
-    }
-    .names {
-        font-size: 1.6em; 
-        margin-bottom: 15px;
-    }
-    .names span {
-        padding: 0 3px; 
-    }
-    .date {
-        font-size: 1.2em;
-        margin-bottom: 15px;
-    }
-    .countdown {
-        font-size: 1.5em; 
-        padding: 8px 15px;
-        letter-spacing: 0.05em;
-    }
-    .countdownNumber {
-        font-size: 1.1em;
-    }
-    .verse {
-        margin-top: 25px;
-        padding-top: 15px;
-        font-size: 0.9em;
-    }
-    .eventInfoSection {
-        padding: 30px 10px;
-        gap: 15px;
-    }
-    .infoCard {
-        padding: 20px;
-    }
-    .infoCard h3 {
-        font-size: 1.2em;
-    }
-    .infoCard p {
-        font-size: 0.85em;
-    }
+  .heroSection {
+    height: auto;
+    min-height: 60vh;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .overlayText {
+    padding: 20px;
+    max-width: 98%;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+  .heroTitle {
+    font-size: 1.6em;
+    letter-spacing: 0;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+  .names {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  .names span {
+    padding: 0 3px;
+  }
+  .date {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  .countdown {
+    font-size: 1.4em;
+    padding: 8px 15px;
+    letter-spacing: 0.05em;
+  }
+  .countdownNumber {
+    font-size: 1em;
+  }
+  .verse {
+    margin-top: 25px;
+    padding-top: 15px;
+    font-size: 0.8em;
+  }
+  .descriptionSection {
+    font-size: 0.85em;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  .bibleVerseUnified {
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .verseReferenceBold {
+    font-size: 0.75em;
+  }
+  .eventInfoSection {
+    padding: 30px 10px;
+    gap: 15px;
+  }
+  .infoCard {
+    padding: 20px;
+  }
+  .infoCard h3 {
+    font-size: 1.2em;
+  }
+  .infoCard p {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroTitle {
+    font-size: 1.2em;
+    line-height: 1.4;
+  }
+  .names {
+    font-size: 1.1em;
+  }
+  .date,
+  .countdown {
+    font-size: 0.9em;
+  }
+  .countdown {
+    padding: 6px 10px;
+    font-size: 1.1em;
+  }
+  .countdownNumber {
+    font-size: 0.8em;
+  }
+  .overlayText {
+    padding: 10px;
+  }
+  .verse {
+    font-size: 0.75em;
+  }
+  .descriptionSection {
+    font-size: 0.8em;
+    padding-top: 8px;
+    margin-bottom: 8px;
+    padding: 6px;
+  }
+  .bibleVerseUnified {
+    font-size: 0.8em;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .verseReferenceBold {
+    font-size: 0.65em;
+  }
+  .eventInfoCard h3 {
+    font-size: 1.1em;
+  }
 }
 
 @media (max-width: 320px) {
-    .heroTitle {
-        font-size: 1.5em;
-    }
-    .names {
-        font-size: 1.3em;
-    }
-    .date, .countdown {
-        font-size: 1em;
-    }
-    .countdown {
-        padding: 6px 10px;
-        font-size: 1.2em;
-    }
-    .countdownNumber {
-        font-size: 0.9em;
-    }
-    .overlayText {
-        padding: 15px;
-    }
+  .heroTitle {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+  .names {
+    font-size: 1em;
+  }
+  .date,
+  .countdown {
+    font-size: 0.8em;
+  }
+  .countdown {
+    padding: 5px 8px;
+    font-size: 1em;
+  }
+  .countdownNumber {
+    font-size: 0.7em;
+  }
+  .overlayText {
+    padding: 8px;
+  }
+  .descriptionSection {
+    font-size: 0.75em;
+    padding: 5px;
+  }
+  .bibleVerseUnified {
+    font-size: 0.75em;
+    margin-bottom: 5px;
+    line-height: 1;
+  }
+  .verseReferenceBold {
+    font-size: 0.65em;
+  }
 }
