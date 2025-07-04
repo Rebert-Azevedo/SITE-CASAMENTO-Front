@@ -17,9 +17,12 @@ function HomePage() {
             mensagem_boas_vindas_site: "Chá de casa nova",
             local_evento: (
               <>
-                Rua da Inconfidência - 121, Pirajá
+                Quando: 17h00
+                <br />
+                Onde: Rua da Inconfidência - 121, Pirajá
                 <br />
                 Salão de festas da Igreja Metodista (1° andar)
+                
               </>
             ),
             link_Maps_evento: "URL_DO_Maps_DO_CHA_DE_CASA_NOVA",
@@ -98,7 +101,7 @@ function HomePage() {
 
       <div className={styles.eventInfoSection}>
         <div className={styles.eventInfoCard}>
-          <h3>Local</h3>
+          <h3>Local e horário</h3>
           <p>{config.local_evento}</p>
         </div>
       </div>
