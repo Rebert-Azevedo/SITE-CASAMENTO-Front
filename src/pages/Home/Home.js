@@ -15,8 +15,13 @@ function HomePage() {
             nome_noiva: "Juliane",
             data_noivado: "2025-09-07",
             mensagem_boas_vindas_site: "Chá de casa nova",
-            local_evento:
-              "Rua da Inconfidência - 121, Pirajá – Salão de festas da Igreja Metodista (1° andar)",
+            local_evento: (
+              <>
+                Rua da Inconfidência - 121, Pirajá
+                <br />
+                Salão de festas da Igreja Metodista (1° andar)
+              </>
+            ),
             link_Maps_evento: "URL_DO_Maps_DO_CHA_DE_CASA_NOVA",
           },
         };

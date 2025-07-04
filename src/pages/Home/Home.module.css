@@ -66,7 +66,6 @@
   line-height: 1.7;
   max-width: 650px;
   text-align: justify;
-  text-align: center;
   border-top: 1px solid var(--color-border-subtle);
   padding-top: 25px;
   background-color: transparent;
@@ -155,7 +154,7 @@
   border-radius: 12px;
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  text-align: left;
   flex: 1;
   min-width: 300px;
   max-width: 500px;
@@ -166,6 +165,21 @@
 .eventInfoCard:hover {
   transform: translateY(-12px);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.eventInfoCard h3 {
+  font-size: 2em;
+  color: var(--color-primary-green);
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.eventInfoCard p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: var(--color-text-dark);
 }
 
 .loading,
