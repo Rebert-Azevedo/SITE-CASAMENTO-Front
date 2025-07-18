@@ -17,7 +17,7 @@ function HomePage() {
             mensagem_boas_vindas_site: "Chá de casa nova",
             local_evento: (
               <>
-                Quando: Dia 07/09/2025, as 17h00
+                Quando: Dia 06/09/2025, as 17h00
                 <br />
                 Onde: Rua da Inconfidência - 121, Pirajá
                 <br />
